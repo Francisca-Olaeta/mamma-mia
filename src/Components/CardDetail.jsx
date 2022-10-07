@@ -20,23 +20,29 @@ return
 }
 
   return (
-    <Card className='col-lg-6 mt-3 p-0' key={selectedProduct.id}>
+    <Card className='col-lg-6 mt-3 p-0 cardflt' key={selectedProduct.id}>
       <Card.Img variant="top" src={selectedProduct.img} />
       <Card.Body>
         <hr />
-        <Card.Title>{selectedProduct.name}</Card.Title>
+        <Card.Title className='text cardflt__title'>{selectedProduct.name}</Card.Title>
         <Card.Text>
           {selectedProduct.desc}
         </Card.Text>
-        <Card.Text>
-          <p>Ingredientes:</p>
+        <div className='cardflt__wrap'>
+        <Card.Text className='text'>
+          <p className='cardflt__ing'>Ingredientes:</p>
           {selectedProduct.ingredients.map((ing, i) => (
             <li key={i}>🍕 {ing}</li>
-          ))}
+            ))}
         </Card.Text>
-        <p>Precio: <span>${selectedProduct.price}</span></p>
+        
+        <div className='cardflt__btns'>
+        <p className='cardflt__price'>Precio: <span className='price'>${selectedProduct.price.toLocaleString("es-CL")}</span></p>
         <Button variant="danger">Añadir</Button>
-        <Button variant="light" onClick={()=> navigate(`/`)}>Volver</Button>
+        <Button variant="outline-danger" onClick={()=> navigate(`/`)}>Volver</Button>
+
+        </div>
+        </div>
       </Card.Body>
     </Card>
   );

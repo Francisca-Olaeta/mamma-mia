@@ -1,13 +1,13 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
-import MyCard from './CardDetail';
+import MyCard from './MyCard';
 
 function Grid({data}) {
 
   return (
     <Container fluid className="row justify-content-center padding-0">
-      {data.map((p)=>(
-        <MyCard product={p} ></MyCard>
+      {data.map((p, i)=>(
+        <MyCard product={p} key={i}></MyCard>
       ))}
     </Container>
   );

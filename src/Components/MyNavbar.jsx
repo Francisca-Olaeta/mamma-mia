@@ -26,7 +26,7 @@ function MyNavbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Selecciona tu pizza" id="collasible-nav-dropdown">
+            {/* <NavDropdown title="Selecciona tu pizza" id="collasible-nav-dropdown">
                 {productList.map((e)=>(
                     <NavDropdown.Item href="#" key={e.id}>
                         <NavLink className={ setActiveClass } to="/pizza">
@@ -34,12 +34,13 @@ function MyNavbar() {
                         </NavLink>
                     </NavDropdown.Item>
                 ))}
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
 
           <Nav>
             <NavLink className={ setActiveClass } to="/carrito">
               Carro de compras 🛒
+              Total: $<span></span>
             </NavLink>
           </Nav>
         </Navbar.Collapse>

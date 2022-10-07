@@ -15,23 +15,7 @@ code {
 
 
 
-.active {
-  color: rgba(255, 126, 124, 0.667);
-  font-weight: 800;
-  text-decoration: none;
-}
 
-.active:visited {
-  color: rgba(255, 126, 124, 0.667);
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.inactive{
-  color: #585858;
-  font-weight: 400;
-  text-decoration: none;
-}
 
 
 

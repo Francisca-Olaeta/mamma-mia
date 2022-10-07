@@ -1,0 +1,17 @@
+.active {
+    color: $primary;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  
+  .active:visited {
+    color: $primary;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  
+  .inactive{
+    color: $secondary;
+    font-weight: 400;
+    text-decoration: none;
+  }

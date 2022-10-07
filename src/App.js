@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MyNavbar from "./Components/MyCard"
+import MyNavbar from "./Components/MyNavbar";
 import Home from "./Views/Home";
 import Detalles from "./Views/Detalles";
 import Carrito from "./Views/Carrito";

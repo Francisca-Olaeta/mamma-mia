@@ -1,0 +1,39 @@
+.cardflt{
+    border-radius: 1rem;
+    overflow: hidden;
+    list-style-type: none;
+
+    &__title{
+        font-size: 1.6rem;
+    }
+
+    &__ing{
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    
+    &__price{
+        @include price($primary);
+
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    &__btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-left: 1rem;
+    }
+
+    &__wrap{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+    }
+
+}

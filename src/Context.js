@@ -22,6 +22,12 @@ const ContextProvider = ({ children }) => {
       getInfoProducts();
     }, []);
 
+    /*Función para añadir al carro de compras */
+    const addToCart = () =>{
+      
+    }
+
+
     return (
         /*En el ContextProvider puedo pasar todas las variables y funciones con desestructuración. Todos los children podrán acceder a esos datos. */
         <Context.Provider value={{productList, setProductList, total, setTotal}}>
