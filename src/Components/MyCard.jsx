@@ -1,11 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useState } from 'react';
+import Badge from 'react-bootstrap/Badge';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
+import Context from '../Context';
 
 
 function MyCard({product}) {
+
+  const { addToCart, cart } = useContext(Context)
 
   const navigate = useNavigate();
 
@@ -14,12 +17,19 @@ function MyCard({product}) {
         navigate(`/pizza/${product}`)
     };
 
+
   return (
-    <Card className="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-3 p-0 text cardflt">
-      <Card.Img variant="top" src={product.img} alt={product.name} />
+    <Card className="col-xl-3 col-lg-4 col-sm-8 m-3 p-0 text cardflt hvr-grow">
+      <Card.Img className='cardflt__img' variant="top" src={product.img} alt={product.name} />
     
       <Card.Body>
+
+      <div className='d-flex justify-content-between align-items-center'> 
       <Card.Title className='cardflt__title'>{product.name}</Card.Title>
+      {cart.qty >= 1 ? <h3><Badge pill bg='dark' variant="success">{cart.qty}</Badge></h3> : null}
+      
+      </div>
+
       <hr />
       <div className='cardflt__wrap'>
         <div className='cardflt__body'>
@@ -32,9 +42,9 @@ function MyCard({product}) {
           </div>
           <div className='cardflt__btns'>
             <p className='cardflt__price'>Precio: $<span>{product.price.toLocaleString("es-CL")}</span></p>
-            {/* /*En la función getDetails estoy pidiendo que me retorne product.name, eso es lo que me va a retornar useParams en vista Detalles */ }
+            {/* En la función getDetails estoy pidiendo que me retorne product.name, eso es lo que me va a retornar useParams en vista Detalles */ }
             <Button variant="outline-danger" onClick={ () => getDetailsLink(product.id)} className='mb-2'> Ver más</Button>
-            <Button variant="danger">Añadir</Button>
+            <Button variant="danger" onClick={ () => addToCart(product)}>Añadir</Button>
           </div>
       </div>
       </Card.Body>

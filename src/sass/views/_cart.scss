@@ -1,0 +1,52 @@
+/*---------------Vista carrito mobile---------------------*/
+.cartdflt {
+    width: 90%;
+    margin-top: 5rem;
+    height: 100vh;
+
+    @media (min-width: 576px){/*Media query tablet*/
+        width: 60%;
+    }
+
+    @media (min-width: 996px){/*Media query desktop*/
+        width: 50%;
+    } 
+    @media (min-width: 1200px){/*Media query desktop xl*/
+        width: 40%;
+    } 
+}
+
+/*---------------Foto y nombre de la pizza---------------------*/
+.imgAndName {
+    display: flex;
+ 
+    &__name {
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin: 0 2rem;
+    }
+}
+
+/*---------------Cantidad y precio de la pizza---------------------*/
+.qtyAndPrice {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    &__price {
+        color: $primary;
+        margin: 0 2rem;
+    }
+    &__qty {
+        margin: 0 .8rem;
+
+    }
+}
+
+/*---------------Botón para hacer el pedido---------------------*/
+.total {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-top: 2.5rem;
+}

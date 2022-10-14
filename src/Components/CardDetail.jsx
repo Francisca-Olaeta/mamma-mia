@@ -6,21 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import Context from '../Context';
 
 function MyCard({selectedProduct}) {
-const {productList, setProductList} = useContext(Context);
+const {addToCart} = useContext(Context);
 
 const navigate = useNavigate();
 
-if ({productList}=== undefined) {
-return 
-<div>
-  <p>Está cargando</p>
-
-</div>
-
-}
-
   return (
-    <Card className='col-lg-6 mt-3 p-0 cardflt' key={selectedProduct.id}>
+    <Card className='col-xl-4 col-lg-8 col-md-8 my-5 p-0 cardflt hvr-grow' key={selectedProduct.id}>
       <Card.Img variant="top" src={selectedProduct.img} />
       <Card.Body>
         <hr />
@@ -38,7 +29,7 @@ return
         
         <div className='cardflt__btns'>
         <p className='cardflt__price'>Precio: <span className='price'>${selectedProduct.price.toLocaleString("es-CL")}</span></p>
-        <Button variant="danger">Añadir</Button>
+        <Button variant="danger" onClick={ () => addToCart(selectedProduct)}>Añadir</Button>
         <Button variant="outline-danger" onClick={()=> navigate(`/`)}>Volver</Button>
 
         </div>

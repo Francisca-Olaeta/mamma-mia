@@ -5,6 +5,8 @@
 
     &__title{
         font-size: 1.6rem;
+        text-align: center;
+        display: flex;
     }
 
     &__ing{
@@ -36,4 +38,18 @@
         flex-wrap: nowrap;
     }
 
+    &__img{
+        height: 25vh;
+        object-fit: cover;
+    }
+    /*----------------------------------Media query desktop----------------------------------------------------*/
+    
+    @media (min-width: 992px){
+       &__img{
+        height: 30vh;
+       } 
+       &__title{
+        text-align: left;
+       }
+    }
 }

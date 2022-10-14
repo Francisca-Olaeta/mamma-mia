@@ -15,17 +15,16 @@ const Detalles = () => {
   /*Paso variables a través del Context */
   const {productList, setProductList} = useContext(Context)
   
-console.log(productList)
+
  const selectedProduct = productList.filter((e) => e.id === id);
- console.log(selectedProduct)
- console.log(selectedProduct.length);
+
 
 
   return (
     <>
     <Container fluid className="row justify-content-center align-items-center">
-    {selectedProduct.length > 0 ? selectedProduct.map((e) => (
-      <CardDetail selectedProduct={e} />
+    {selectedProduct.length > 0 ? selectedProduct.map((e, i) => (
+      <CardDetail selectedProduct={e} key={i} />
     )):null
     }
 

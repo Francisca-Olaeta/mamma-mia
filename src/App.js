@@ -10,10 +10,10 @@ import NotFound from "./Views/NotFound";
 
 
 import { ContextProvider } from "./Context";
+import Footer from "./Components/Footer";
 
 
 function App() {
-
 
   return (
     <div className="App">
@@ -27,6 +27,7 @@ function App() {
             <Route path="/carrito" element={<Carrito />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer className="" />
         </BrowserRouter>
 
       </ContextProvider>
